@@ -239,6 +239,19 @@
   .footer-brand{display:flex;align-items:center;gap:12px;margin-top:14px;}
   .footer-brand .x{color:var(--text-muted);font-size:13px;}
   .footer-brand .brand-logo{height:19px;opacity:.92;}
+
+  /* ---------- menü: közösségi ikonok + jogi sor ---------- */
+  .menu-social{display:flex;align-items:center;gap:22px;}
+  .menu-social a{
+    color:var(--text-muted);display:flex;align-items:center;justify-content:center;
+    transition:color .2s ease,transform .2s ease;
+  }
+  .menu-social a:hover{color:var(--cs-amber);transform:translateY(-2px);}
+  .menu-social svg{width:21px;height:21px;}
+  .menu-bottom{
+    display:flex;align-items:center;gap:10px;flex-wrap:wrap;justify-content:center;
+  }
+  .menu-bottom .dot{color:var(--text-muted);opacity:.5;font-size:13px;}
 </style>
 </head>
 <body>
@@ -304,7 +317,24 @@
     <a href="rolmako.html">rolmako</a>
     <a href="tecnoma.html">tecnoma</a>
   </nav>
-  <a class="back" href="https://chemicalseed.hu">vissza a chemicalseed.hu-ra</a>
+
+  <div class="menu-social">
+    <a href="https://www.youtube.com/@Chemical-Seed" target="_blank" rel="noopener" aria-label="YouTube">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M22.54 6.42a2.78 2.78 0 0 0-1.94-2C18.88 4 12 4 12 4s-6.88 0-8.6.46a2.78 2.78 0 0 0-1.94 2A29 29 0 0 0 1 11.75a29 29 0 0 0 .46 5.33A2.78 2.78 0 0 0 3.4 19c1.72.46 8.6.46 8.6.46s6.88 0 8.6-.46a2.78 2.78 0 0 0 1.94-2 29 29 0 0 0 .46-5.25 29 29 0 0 0-.46-5.33z"/><path d="M9.75 15.02l5.75-3.27-5.75-3.27v6.54z"/></svg>
+    </a>
+    <a href="https://www.facebook.com/chemicalseedkft" target="_blank" rel="noopener" aria-label="Facebook">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/></svg>
+    </a>
+    <a href="https://www.linkedin.com/company/chemical-seed-kft/" target="_blank" rel="noopener" aria-label="LinkedIn">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/><rect x="2" y="9" width="4" height="12"/><circle cx="4" cy="4" r="2"/></svg>
+    </a>
+  </div>
+
+  <div class="menu-bottom">
+    <a class="back" href="https://chemicalseed.hu">vissza a chemicalseed.hu-ra</a>
+    <span class="dot">·</span>
+    <a class="back" href="https://chemicalseed.hu/adatvedelmi-tajekoztato">adatkezelési tájékoztató</a>
+  </div>
 </div>
 
 <script>
