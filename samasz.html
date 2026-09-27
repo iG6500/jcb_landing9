@@ -436,23 +436,24 @@
          a legutóbbi élő oldalról ellenőrizendő és bemásolandó ide deploy előtt. -->
     <form action="#" method="post">
       <div class="frow">
-        <input type="text" name="FNAME" placeholder="Név*" required>
-        <input type="text" name="MMERGE7" placeholder="Cégnév">
+        <input type="text" name="LNAME" placeholder="Vezetéknév*" autocomplete="family-name" required>
+        <input type="text" name="FNAME" placeholder="Keresztnév*" autocomplete="given-name" required>
       </div>
       <div class="frow">
         <input type="email" name="EMAIL" placeholder="E-mail*" required>
         <input type="tel" name="PHONE" placeholder="Telefonszám (+36-30-123-4567)*" required>
       </div>
       <div class="frow">
+        <input type="text" name="MMERGE7" placeholder="Cégnév">
         <input type="text" name="MMERGE8" placeholder="Település">
-        <select name="MMERGE21" id="machineSelect">
-          <option value="">Érdeklődés — válassz gépet</option>
-          <option value="KT 301">KT 301 kasza</option>
-          <option value="P4-531">P4-531 rendterítő</option>
-          <option value="Z2-780">Z2-780 rendképző</option>
-          <option value="Egyéb">Egyéb SaMASZ gép</option>
-        </select>
       </div>
+      <select name="MMERGE21" id="machineSelect">
+        <option value="">Érdeklődés — válassz gépet</option>
+        <option value="KT 301">KT 301 kasza</option>
+        <option value="P4-531">P4-531 rendterítő</option>
+        <option value="Z2-780">Z2-780 rendképző</option>
+        <option value="Egyéb">Egyéb SaMASZ gép</option>
+      </select>
       <textarea name="MMERGE22" placeholder="Üzenet"></textarea>
       <label class="gdpr">
         <input type="checkbox" required>
