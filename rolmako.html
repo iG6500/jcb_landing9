@@ -121,6 +121,9 @@
   label.gdpr{display:flex;gap:10px;align-items:flex-start;font-size:12.5px;color:var(--text-muted);}
   label.gdpr input{width:auto;margin-top:3px;}
   label.gdpr a{color:var(--rolmako);}
+  .form-msg{margin:0;padding:14px 16px;border-radius:10px;font-size:14px;line-height:1.5;border:1px solid var(--border);background:var(--bg-elev);}
+  .form-msg.ok{border-color:color-mix(in srgb,var(--brand) 60%,var(--border));}
+  .form-msg.err{border-color:#c0504d;}
 
   footer{border-top:1px solid var(--border);padding:56px 0 32px;}
   .foot-grid{display:grid;grid-template-columns:1.4fr 1fr 1fr;gap:40px;}
@@ -365,10 +368,7 @@
     <h2 style="margin-top:10px;">Kérj személyre szabott ajánlatot Rolmako gépekre</h2>
     <p class="sub">Töltsd ki az űrlapot, és a Chemical-Seed csapata felveszi Veled a kapcsolatot a kiválasztott géppel kapcsolatban.</p>
 
-    <!-- TODO build: éles Mailchimp embed szükséges — audience 4774a6baa8, form action URL,
-         valamint az aktuális MMERGE mező (MMERGE19/20 havonta váltakozik) és f_id/tag
-         a legutóbbi élő oldalról ellenőrizendő és bemásolandó ide deploy előtt. -->
-    <form action="#" method="post">
+    <form action="https://xtratech.us18.list-manage.com/subscribe/post?u=859ff0560bf14ca6c051f7f8e&amp;id=4774a6baa8&amp;f_id=0022abe6f0" method="post" id="leadForm" target="_blank" novalidate>
       <div class="frow">
         <input type="text" name="LNAME" placeholder="Vezetéknév*" autocomplete="family-name" required>
         <input type="text" name="FNAME" placeholder="Keresztnév*" autocomplete="given-name" required>
@@ -381,21 +381,22 @@
         <input type="text" name="MMERGE7" placeholder="Cégnév">
         <input type="text" name="MMERGE8" placeholder="Település">
       </div>
-      <select name="MMERGE21" id="machineSelect">
+      <select name="MMERGE24" id="machineSelect">
         <option value="">Érdeklődés — válassz gépet</option>
         <option value="SpringExpert">SpringExpert mulcsborona</option>
         <option value="U 638">U 638 talajlazító</option>
         <option value="U 652">U 652 rövidtárcsa</option>
-        <option value="Egyéb">Egyéb Rolmako gép</option>
+        <option value="Egyéb Rolmako gép">Egyéb Rolmako gép</option>
       </select>
-      <textarea name="MMERGE22" placeholder="Üzenet"></textarea>
       <label class="gdpr">
-        <input type="checkbox" required>
+        <input type="checkbox" name="MMERGE11" value="Igen" required>
         <span>Hozzájárulok, hogy a Chemical-Seed a megadott adataimat az ajánlatkérés megválaszolása céljából kezelje. Az <a href="#">adatkezelési tájékoztatót</a> elolvastam és megértettem.</span>
       </label>
+      <div aria-hidden="true" style="position:absolute;left:-5000px;"><input type="text" name="b_859ff0560bf14ca6c051f7f8e_4774a6baa8" tabindex="-1" value=""></div>
       <div>
         <button type="submit" class="btn solid">Elküldöm</button>
       </div>
+      <p class="form-msg" id="formMsg" role="status" aria-live="polite" hidden></p>
     </form>
   </div>
 </section>
@@ -576,6 +577,45 @@
       var b = card.querySelector('[data-open-modal]'); if(b){ b.click(); }
     });
   });
+  // Mailchimp feliratkozás JSONP-n keresztül, hogy ne nyisson új lapot
+  (function(){
+    var form = document.getElementById('leadForm');
+    var msg = document.getElementById('formMsg');
+    if(!form) return;
+    var btn = form.querySelector('button[type="submit"]');
+    function show(text, ok){
+      msg.textContent = text;
+      msg.className = 'form-msg ' + (ok ? 'ok' : 'err');
+      msg.hidden = false;
+    }
+    form.addEventListener('submit', function(e){
+      e.preventDefault();
+      if(!form.checkValidity()){ form.reportValidity(); return; }
+      var cb = 'mcCb' + Date.now();
+      var params = new URLSearchParams(new FormData(form));
+      params.append('c', cb);
+      var script = document.createElement('script');
+      var done = function(){ delete window[cb]; script.remove(); btn.disabled = false; };
+      window[cb] = function(res){
+        done();
+        if(res && res.result === 'success'){
+          form.reset();
+          show('Köszönjük! Megkaptuk az ajánlatkérésed, kollégánk hamarosan felveszi Veled a kapcsolatot.', true);
+        } else {
+          var t = String((res && res.msg) || '').replace(/<[^>]*>/g, '').replace(/^\d+\s*-\s*/, '');
+          if(/already subscribed|már fel/i.test(t)){
+            show('Ezzel az e-mail címmel már szerepelsz nálunk — kollégánk hamarosan jelentkezik.', true);
+          } else {
+            show('Hiba történt a küldéskor' + (t ? ': ' + t : '.') + ' Kérjük, próbáld újra.', false);
+          }
+        }
+      };
+      script.onerror = function(){ done(); show('Nem sikerült elküldeni az űrlapot. Kérjük, próbáld újra később.', false); };
+      script.src = form.action.replace('/post?', '/post-json?') + '&' + params.toString();
+      btn.disabled = true;
+      document.body.appendChild(script);
+    });
+  })();
 </script>
 
 </body>
