@@ -19,7 +19,7 @@
     --cs-amber:#f7b119;
     --cs-amber-deep:#b5820b;
     --samasz:#5aa94e;
-    --rolmako:#ef6d1a;
+    --rolmako:#4da3ff;
     --tecnoma:#8fd12f;
     --header-h:150px;
   }
@@ -193,7 +193,7 @@
   .menu-nav a{
     font-family:'Archivo Black',sans-serif;
     font-size:clamp(22px,4vw,32px);
-    text-transform:lowercase;
+    text-transform:uppercase;
     color:var(--text);
     border-bottom:2px solid transparent;
     transition:color .2s ease,border-color .2s ease;
@@ -252,6 +252,13 @@
     display:flex;align-items:center;gap:10px;flex-wrap:wrap;justify-content:center;
   }
   .menu-bottom .dot{color:var(--text-muted);opacity:.5;font-size:13px;}
+
+  .cs-logo img{height:34px;width:auto;display:block;}
+  .menu-overlay .cs-logo img{height:34px;}
+  @media (max-width:480px){.cs-logo img{height:28px;}.menu-overlay .cs-logo img{height:30px;}}
+
+  .top-header .cs-logo img{height:46px;margin:0 auto;}
+  @media (max-width:480px){.top-header .cs-logo img{height:38px;}}
 </style>
 </head>
 <body>
@@ -263,7 +270,7 @@
 <div class="split-hero">
 
   <div class="top-header">
-    <div class="cs-logo">Chemical<span>Seed</span></div>
+    <div class="cs-logo"><img src="img/chemicalseed-logo.png" alt="Chemical Seed"></div>
     <div class="cs-tag">SAMASZ · ROLMAKO · TECNOMA hivatalos márkapartner</div>
     <h1>Melyik munkát<br>végzed <em>most</em>?</h1>
   </div>
@@ -310,7 +317,7 @@
 </div>
 
 <div class="menu-overlay" id="menuOverlay">
-  <div class="cs-logo">Chemical<span>Seed</span></div>
+  <div class="cs-logo"><img src="img/chemicalseed-logo.png" alt="Chemical Seed"></div>
   <button class="menu-close" id="menuClose" aria-label="Menü bezárása">&times;</button>
   <nav class="menu-nav">
     <a href="samasz.html">samasz</a>
