@@ -94,6 +94,10 @@
   .intro-grid ul{list-style:none;margin-top:22px;display:flex;flex-direction:column;gap:12px;}
   .intro-grid ul li{position:relative;padding-left:22px;color:var(--text-muted);font-size:15px;}
   .intro-grid ul li::before{content:"";position:absolute;left:0;top:9px;width:8px;height:8px;background:var(--samasz);border-radius:2px;}
+  .intro-grid ul li.highlight{padding:13px 16px 13px 54px;border:1px solid color-mix(in srgb,var(--brand) 55%,transparent);background:color-mix(in srgb,var(--brand) 13%,transparent);border-radius:12px;color:#fff;font-size:16px;}
+  .intro-grid ul li.highlight::before{display:none;}
+  .intro-grid ul li.highlight svg{position:absolute;left:16px;top:50%;transform:translateY(-50%);width:24px;height:24px;stroke:var(--brand);}
+  .intro-grid ul li.highlight strong{color:#fff;font-weight:700;}
   .cta-row{text-align:center;margin-top:44px;}
   .btn{
     display:inline-flex;align-items:center;gap:10px;
@@ -343,7 +347,7 @@
         <li>Tiszta takarmány, jó talajkövetés minden munkamenetben</li>
         <li>Nagy területteljesítmény és kezelői komfort</li>
         <li>Saját fejlesztésű <strong style="color:#fff">PerfectCUT</strong> kaszagerendely-technológia</li>
-        <li>2 év gyártói garancia</li>
+        <li class="highlight"><svg viewBox="0 0 24 24" fill="none" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3l7 3v5c0 4.5-3 8-7 10-4-2-7-5.5-7-10V6l7-3z"/><path d="M9 12l2 2 4-4"/></svg><strong>2 év gyártói garancia</strong></li>
       </ul>
     </div>
   </div>
