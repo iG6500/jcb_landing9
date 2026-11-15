@@ -245,6 +245,9 @@
   .cs-logo img{height:34px;width:auto;display:block;}
   .menu-overlay .cs-logo img{height:34px;}
   @media (max-width:480px){.cs-logo img{height:28px;}.menu-overlay .cs-logo img{height:30px;}}
+
+  .price{align-self:flex-start;font-family:'JetBrains Mono',monospace;font-size:13px;font-weight:700;color:#fff;background:color-mix(in srgb,var(--brand) 16%,transparent);border:1px solid color-mix(in srgb,var(--brand) 45%,transparent);border-radius:8px;padding:8px 12px;}
+  .modal .price{margin-top:14px;display:inline-block;}
 </style>
 </head>
 <body>
@@ -321,6 +324,7 @@
           <h4>SpringExpert mulcsborona</h4>
           <div class="tagline">Sekély, intenzív talajkeverés nagy sebességgel.</div>
           <p class="desc">Rugós kapasoros mulcsborona nagy munkaszélességben — tarlóhántáshoz és a talaj gyors, sekély átkeveréséhez, három munkaszélesség-választékban.</p>
+          <div class="price">18.000 EUR-tól</div>
           <button class="btn" type="button" data-open-modal="springexpert">Részletek</button>
         </div>
       </div>
@@ -332,6 +336,7 @@
           <h4>U 638 többcélú talajlazító</h4>
           <div class="tagline">Rugós biztosítású kapák, sekély és mély lazításhoz.</div>
           <p class="desc">Sokoldalú talajlazító, amely a sekélyebb tarlóműveléstől a mélyebb lazításig is bevethető — függesztett és vontatott kivitelben.</p>
+          <div class="price">20.600 EUR-tól</div>
           <button class="btn" type="button" data-open-modal="u638">Részletek</button>
         </div>
       </div>
@@ -343,6 +348,7 @@
           <h4>U 652 rövidtárcsa</h4>
           <div class="tagline">Nagy munkasebesség, intenzív aprítás.</div>
           <p class="desc">Rövidtárcsa-család a sekély tarlóműveléshez — függesztett és vontatott (HP) kivitelben, BigField eszközhordozóban akár 8,0 m munkaszélességgel.</p>
+          <div class="price">12.500 EUR-tól</div>
           <button class="btn" type="button" data-open-modal="u652">Részletek</button>
         </div>
       </div>
@@ -387,7 +393,7 @@
       </div>
       <div class="frow">
         <input type="text" name="MMERGE7" placeholder="Cégnév">
-        <input type="text" name="MMERGE8" placeholder="Település">
+        <input type="text" name="MMERGE8" placeholder="Település*" autocomplete="address-level2" required>
       </div>
       <select name="MMERGE24" id="machineSelect">
         <option value="">Érdeklődés — válassz gépet</option>
@@ -450,6 +456,7 @@
       <span class="specs">6,0–9,0 m · 5 sor rugós kapa · 90–180 LE-től</span>
       <h3 class="mtitle">SpringExpert mulcsborona</h3>
       <div class="mtag">Nagy munkaszélességű, rugós kapasoros mulcsborona</div>
+      <div class="price">18.000 EUR-tól</div>
       <p class="mdesc">A SpringExpert rugós kapasoros kialakítása nagy sebességű, sekély talajkeverésre és tarlóhántásra készült — öt sor rugós kapával, három munkaszélesség-választékban.</p>
       <div class="spectable">
         <div class="row"><dt>Munkaszélesség</dt><dd>6,0–9,0 m</dd></div>
@@ -480,6 +487,7 @@
       <span class="specs">2,5–6,0 m · 7–20 kapa · 100–260 LE-től</span>
       <h3 class="mtitle">U 638 többcélú talajlazító</h3>
       <div class="mtag">Rugós biztosítású kapák, függesztett és vontatott kivitelben</div>
+      <div class="price">20.600 EUR-tól</div>
       <p class="mdesc">Az U 638 a sekélyebb tarlóműveléstől a mélyebb lazításig sokféle feladatra bevethető. A nagyobb munkaszélességű H és HP jelű változatok hidraulikusan összecsukhatók, illetve vontatott kivitelben is rendelhetők.</p>
       <div class="spectable">
         <div class="row"><dt>Munkaszélesség</dt><dd>2,5–6,0 m</dd></div>
@@ -510,6 +518,7 @@
       <span class="specs">3,0–6,0 m · 24–48 tárcsa · 110–200 LE-től</span>
       <h3 class="mtitle">U 652 rövidtárcsa</h3>
       <div class="mtag">Függesztett és vontatott kivitelben, BigField eszközhordozóban is</div>
+      <div class="price">12.500 EUR-tól</div>
       <p class="mdesc">Az U 652 rövidtárcsa nagy munkasebességgel, intenzív aprítással dolgozik. A kisebb, függesztett méretektől a hidraulikusan összecsukható (H), majd a vontatott (HP) nagy teljesítményű változatokig terjed a kínálat.</p>
       <div class="spectable">
         <div class="row"><dt>Munkaszélesség</dt><dd>3,0–6,0 m</dd></div>
