@@ -311,6 +311,9 @@
   .cs-logo img{height:34px;width:auto;display:block;}
   .menu-overlay .cs-logo img{height:34px;}
   @media (max-width:480px){.cs-logo img{height:28px;}.menu-overlay .cs-logo img{height:30px;}}
+
+  .price{align-self:flex-start;font-family:'JetBrains Mono',monospace;font-size:13px;font-weight:700;color:#fff;background:color-mix(in srgb,var(--brand) 16%,transparent);border:1px solid color-mix(in srgb,var(--brand) 45%,transparent);border-radius:8px;padding:8px 12px;}
+  .modal .price{margin-top:14px;display:inline-block;}
 </style>
 </head>
 <body>
@@ -381,24 +384,26 @@
     <div class="card-grid3">
 
       <div class="machine-card">
-        <div class="ph-wrap"><div class="ph" style="background-image:url('img/samasz-kt301.jpg')"></div></div>
-        <div class="body">
-          <span class="specs">3,00 m · 7 tárcsa · 95+ LE</span>
-          <h4>KT 301 kasza</h4>
-          <div class="tagline">Extra pozíciók, hidropneumatikus tehermentesítéssel.</div>
-          <p class="desc">Hátsó, központi felfüggesztésű tárcsás kasza igényesebb felhasználóknak — egyedi kialakítású függesztéssel, extra szállítási és parkolási pozíciókkal.</p>
-          <button class="btn" type="button" data-open-modal="kt301">Részletek</button>
-        </div>
-      </div>
-
-      <div class="machine-card">
         <div class="ph-wrap"><div class="ph" style="background-image:url('img/samasz-samba241.webp')"></div></div>
         <div class="body">
           <span class="specs">2,40 m · 4 tárcsa · 45+ LE</span>
           <h4>SAMBA 241 hátsó oldalkasza</h4>
           <div class="tagline">Könnyű szerkezet, kisebb gazdaságoknak.</div>
           <p class="desc">Hátsó, könnyű szerkezetű tárcsás kasza — kis talajterheléssel, dombos és nedves területeken is jól használható.</p>
+          <div class="price">7.600 EUR</div>
           <button class="btn" type="button" data-open-modal="samba241">Részletek</button>
+        </div>
+      </div>
+
+      <div class="machine-card">
+        <div class="ph-wrap"><div class="ph" style="background-image:url('img/samasz-kt301.jpg')"></div></div>
+        <div class="body">
+          <span class="specs">3,00 m · 7 tárcsa · 95+ LE</span>
+          <h4>KT 301 kasza</h4>
+          <div class="tagline">Extra pozíciók, hidropneumatikus tehermentesítéssel.</div>
+          <p class="desc">Hátsó, központi felfüggesztésű tárcsás kasza igényesebb felhasználóknak — egyedi kialakítású függesztéssel, extra szállítási és parkolási pozíciókkal.</p>
+          <div class="price">12.650 EUR</div>
+          <button class="btn" type="button" data-open-modal="kt301">Részletek</button>
         </div>
       </div>
 
@@ -409,6 +414,7 @@
           <h4>KDF 302 frontkasza</h4>
           <div class="tagline">Kiváló talajkövetés, kombinálható hátsó kaszával.</div>
           <p class="desc">Első függesztésű tárcsás kasza vontatott kaszagerendely-felfüggesztéssel — a talajkövetés a traktortól függetlenül, szabadon alkalmazkodik a terep egyenetlenségeihez.</p>
+          <div class="price">14.000 EUR</div>
           <button class="btn" type="button" data-open-modal="kdf302">Részletek</button>
         </div>
       </div>
@@ -453,12 +459,12 @@
       </div>
       <div class="frow">
         <input type="text" name="MMERGE7" placeholder="Cégnév">
-        <input type="text" name="MMERGE8" placeholder="Település">
+        <input type="text" name="MMERGE8" placeholder="Település*" autocomplete="address-level2" required>
       </div>
       <select name="MMERGE23" id="machineSelect">
         <option value="">Érdeklődés — válassz gépet</option>
-        <option value="KT 301">KT 301 kasza</option>
         <option value="SAMBA 241">SAMBA 241 hátsó oldalkasza</option>
+        <option value="KT 301">KT 301 kasza</option>
         <option value="KDF 302">KDF 302 frontkasza</option>
         <option value="Egyéb Samasz gép">Egyéb SaMASZ gép</option>
       </select>
@@ -516,6 +522,7 @@
       <span class="specs">3,00 m · 7 tárcsa · 95+ LE</span>
       <h3 class="mtitle">KT 301 kasza</h3>
       <div class="mtag">Hátsó, központi felfüggesztésű tárcsás kasza</div>
+      <div class="price">12.650 EUR</div>
       <p class="mdesc">A KT sorozat igényesebb felhasználók számára ideális választás. Az egyedi függesztési kialakítás extra szállítási és parkolási pozíciókkal különbözteti meg a gépet, emellett hidropneumatikus tehermentesítő rendszerrel is felszerelhető a PerfectCUT kaszagerendely talajnyomásának finomhangolásához.</p>
       <div class="spectable">
         <div class="row"><dt>Munkaszélesség</dt><dd>3,00 m</dd></div>
@@ -551,6 +558,7 @@
       <span class="specs">2,40 m · 4 tárcsa · 45+ LE</span>
       <h3 class="mtitle">SAMBA 241 hátsó oldalkasza</h3>
       <div class="mtag">Hátsó, könnyű szerkezetű tárcsás kasza kisebb gazdaságoknak</div>
+      <div class="price">7.600 EUR</div>
       <p class="mdesc">Könnyű szerkezetű hátsó kasza, amelyet kisebb gazdaságok számára terveztek. Kis talajterhelése miatt dombos és nedves területeken is jól használható, a talajt a ±30°-os talajkövetés kíséri.</p>
       <div class="spectable">
         <div class="row"><dt>Munkaszélesség</dt><dd>2,40 m</dd></div>
@@ -591,6 +599,7 @@
       <span class="specs">3,00 m · 7 tárcsa · 80+ LE</span>
       <h3 class="mtitle">KDF 302 frontkasza</h3>
       <div class="mtag">Első függesztésű tárcsás kasza vontatott kaszagerendely-felfüggesztéssel</div>
+      <div class="price">14.000 EUR</div>
       <p class="mdesc">A termelékenység növelésének első lépése a frontkasza és a hátsó kasza kombinációja. A KDF megbízható szerkezetét és kiváló talajkövetését világszerte bizonyította, a PerfectCUT kaszagerendely pedig kiváló vágásminőséget ad.</p>
       <div class="spectable">
         <div class="row"><dt>Munkaszélesség</dt><dd>3,00 m</dd></div>
